@@ -147,7 +147,8 @@ void print_all(Record records[]){
   	printf("\n%2s\t\t%18s\t\t\t\t%18s\t\t\t\t\t%6s%6s\n", "ID", "Title", "Author", "Price", "Stock");
 
   	while (records[size].id != 0) {
-    		printf("%4d\t%-48s\t%-48s\t%6.2lf\t%3d\n", records[size].id, records[size].title, records[size].author, records[size].price, records[size].stock);
+    		printf("%4d\t%-48s\t%-48s\t%6.2lf\t%3d\n", records[size].id, records[size].title, 
+			records[size].author, records[size].price, records[size].stock);
     		size++;
   	}
 }
@@ -181,7 +182,8 @@ void print_specific(Record records[]){
 		printf("\n%2s\t\t%18s\t\t\t\t%18s\t\t\t\t\t%6s%6s\n", "ID", "Title", "Author", "Price", "Stock");		
     		while (i < size) {
       			if (!strcmp(title, records[i].title))
-        			printf("%4d\t%-48s\t%-48s\t%6.2lf\t%3d\n", records[i].id, records[i].title, records[i].author, records[i].price, records[i].stock);	
+        			printf("%4d\t%-48s\t%-48s\t%6.2lf\t%3d\n", records[i].id, records[i].title, 
+					records[i].author, records[i].price, records[i].stock);	
       			i++;
     		}
   	}
@@ -193,7 +195,8 @@ void print_specific(Record records[]){
 		printf("\n%2s\t\t%18s\t\t\t\t%18s\t\t\t\t\t%6s%6s\n", "ID", "Title", "Author", "Price", "Stock");	
     		while (i < size) {
       			if (!strcmp(author, records[i].author))
-				printf("%4d\t%-48s\t%-48s\t%6.2lf\t%3d\n", records[i].id, records[i].title, records[i].author, records[i].price, records[i].stock);
+				printf("%4d\t%-48s\t%-48s\t%6.2lf\t%3d\n", records[i].id, records[i].title, 
+					records[i].author, records[i].price, records[i].stock);
 			i++;
     		}
   	}
@@ -314,7 +317,8 @@ void write_report(Record records[]){
   	fputs("*********************************************************************************************************\n", fp);
 
   	while (i < size) {
-    		fprintf(fp, "%4d\t%-40s\t%-24s\t%6.2lf\t %3d\n", records[i].id, records[i].title, records[i].author, records[i].price, records[i].stock);
+    		fprintf(fp, "%4d\t%-40s\t%-24s\t%6.2lf\t %3d\n", records[i].id, records[i].title, records[i].author, 
+			records[i].price, records[i].stock);
     		i++;
   	}
 
