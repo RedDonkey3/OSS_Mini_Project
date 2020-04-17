@@ -12,15 +12,14 @@ void display_menu();
 
 // main function
 int main(){
-
 	Record records[MAX_RECORDS] = {0, };
-
 	char user_input[64] = "";
+
 	while(strcmp(user_input, "99") != 0){
 		display_menu();
 		printf("\nSelect a menu> ");
 		fgets(user_input, 64, stdin);
-		user_input[strlen(user_input)-1] = '\0';
+		user_input[strlen(user_input) - 1] = '\0';
 		input_handler(user_input, records);
 	}
 
@@ -28,13 +27,12 @@ int main(){
 }
 
 
+
 // Function: input_handler()
 // Input: record - array of Records; this may contain empty elements in the middle
 // Output: none
-// - Handles the user input and invokes functions that correspond to the user input
+// Handles the user input and invokes functions that correspond to the user input
 void input_handler(char input[], Record records[]){
-
-	// TODO: Modify this function as you need
 	if(!strcmp(input, "1")) 
     		add_a_record(records);
 	else if(!strcmp(input, "2"))
@@ -56,9 +54,9 @@ void input_handler(char input[], Record records[]){
   	else if(!strcmp(input, "10"))
     		delete_nulls(records);
 	else if(!strcmp(input, "99"))
-		printf("Terminating... bye!\n"); // Quit - no operation (an empty statement with a semi-colon)
+		printf("\n\tTerminating... bye!\n\n"); // Quit - no operation (an empty statement with a semi-colon)
 	else
-		printf("Unknown menu: %s \n\n", input);
+		printf("\n\tUnknown menu: %s \n\n", input);
 }
 
 
@@ -68,9 +66,6 @@ void input_handler(char input[], Record records[]){
 // Output: none
 // Display the menu
 void display_menu(){
-
-	// TODO: Modify this function as you need
-
 	printf("******************************\n");
 	printf(" Bookstore management system \n");
 	printf("******************************\n");
