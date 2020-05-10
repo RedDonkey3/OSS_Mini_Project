@@ -23,9 +23,9 @@ This structure means the information of the books in booksotre
 ***
 
 * Take user’s input and create a new record   
-
+```
 	void add_a_recordU(Record[]);
-
+```
 
 * Create a new data record from a data file   
 
