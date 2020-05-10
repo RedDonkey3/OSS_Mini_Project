@@ -83,3 +83,5 @@ This structure means the information of the books in booksotre
 ```
 	void delete_nulls(Record[]);
 ```
+
+***
