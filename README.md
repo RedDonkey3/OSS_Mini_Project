@@ -1,10 +1,14 @@
 # OSS_Mini_Project / 21600153 / Junhee Kim / Bookstore management system
 
+***
+
 It is a program that makes it easy to access and handle information on books that exist in bookstore.
 The program stores information on books that exist in bookstore in the form of a data set and has functions that deal with this data.
 This program allows you to add or modify data and delete it.
 It is also possible to store information in other data files, when it is possible to save it in a report format.
 Finally, the program can help you easily find information about your saved books or sort them out according to specified conditions.
+ 
+***
  
 This structure means the information of the books in booksotre 
 
@@ -15,6 +19,8 @@ This structure means the information of the books in booksotre
   		double price;   
   		int stock;   
 	} Record;
+
+***
 
 * Take user’s input and create a new record   
 
@@ -51,6 +57,8 @@ This structure means the information of the books in booksotre
 * Delete specific records (by id)   
 
 	void delete_records(Record[]);
+	
+***
 
 * Collect all the empty element in data array and move them to the end of the array   
 
