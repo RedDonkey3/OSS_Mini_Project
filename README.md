@@ -6,8 +6,8 @@ This program allows you to add or modify data and delete it.
 It is also possible to store information in other data files, when it is possible to save it in a report format.
 Finally, the program can help you easily find information about your saved books or sort them out according to specified conditions.
 
-// type definition
-// This structure means the information of the books in booksotre
+// type definition   
+// This structure means the information of the books in booksotre   
 typedef struct record {
 	  int id; // id: identification number
   	char title[64];
@@ -16,38 +16,38 @@ typedef struct record {
   	int stock;
 } Record;
 
-// Take user’s input and create a new record
+// Take user’s input and create a new record   
 void add_a_recordU(Record[]);
 
-// Create a new data record from a data file
+// Create a new data record from a data file   
 void add_a_recordD(Record[]);
 
-// Print all records
+// Print all records   
 void print_all(Record[]);
 
-// Print specific records (by title or author)
+// Print specific records (by title or author)   
 void print_specific(Record[]);
 
-// Write the entire records to a data file
+// Write the entire records to a data file   
 void write_to_file(Record[]);
 
-// Load the data from a data file
+// Load the data from a data file   
 void load(Record[]);
 
-// Export the entire records in a report format
+// Export the entire records in a report format   
 void write_report(Record[]);
 
-// Update a specific record (by id)
+// Update a specific record (by id)   
 void update_a_record(Record[]);
 
-// Delete specific records (by id)
+// Delete specific records (by id)   
 void delete_records(Record[]);
 
-// Collect all the empty element in data array and move them to the end of the array
+// Collect all the empty element in data array and move them to the end of the array   
 int defragment(Record[]);
 
-// Arrange the order of data records based on user specified conditions (by title or author)
+// Arrange the order of data records based on user specified conditions (by title or author)   
 void sort(Record[]);
 
-// Delete null records (You should use this function after invoking defragment())
+// Delete null records (You should use this function after invoking defragment())   
 void delete_nulls(Record[]);
