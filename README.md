@@ -10,7 +10,7 @@ Finally, the program can help you easily find information about your saved books
  
 ***
  
-This structure means the information of the books in booksotre 
+This structure means the information of the books in booksotre. 
 
 	typedef struct record {
 		int id; // id: identification number   
