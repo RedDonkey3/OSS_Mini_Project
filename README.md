@@ -28,58 +28,58 @@ This structure means the information of the books in booksotre
 ```
 
 * Create a new data record from a data file   
-
+```
 	void add_a_recordD(Record[]);
-
+```
 
 * Print all records   
-
+```
 	void print_all(Record[]);
-
+```
 
 * Print specific records (by title or author)   
-
+```
 	void print_specific(Record[]);
-
+```
 
 * Write the entire records to a data file   
-
+```
 	void write_to_file(Record[]);
-
+```
 
 * Load the data from a data file   
-
+```
 	void load(Record[]);
-
+```
 
 * Export the entire records in a report format   
-
+```
 	void write_report(Record[]);
-
+```
 
 * Update a specific record (by id)   
-
+```
 	void update_a_record(Record[]);
-
+```
 
 * Delete specific records (by id)   
-
+```
 	void delete_records(Record[]);
-	
+```	
 
 ***
 
 * Collect all the empty element in data array and move them to the end of the array   
-
+```
 	int defragment(Record[]);
-
+```
 
 * Arrange the order of data records based on user specified conditions (by title or author)   
-
+```
 	void sort(Record[]);
-
+```
 
 * Delete null records (You should use this function after invoking defragment())   
-
+```
 	void delete_nulls(Record[]);
-
+```
