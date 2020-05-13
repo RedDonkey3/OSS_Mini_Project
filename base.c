@@ -42,7 +42,6 @@ void add_a_record(Record records[]) {
 // Take user's input and create a new record
 void add_a_recordU(Record records[]){
   	int size = 0;
-
   	while (records[size].id != 0) size++;
 
   	printf("\n\tEnter the title of book: ");
@@ -53,10 +52,22 @@ void add_a_recordU(Record records[]){
   	records[size].author[strlen(records[size].author) - 1] = '\0';
   	printf("\tEnter the price($) of the book: ");
   	scanf("%lf", &records[size].price);
-  	clear_buffer();
+    clear_buffer();
+    while(records[size].price /1 == 0){
+      printf("\t\n*ERROR* \n\tYou have to write in number in price.");    
+      printf("\n\tEnter the price($) of the book again: ");
+      scanf("%lf", &records[size].price);
+      clear_buffer();
+    }
   	printf("\tEnter the stock of the book: ");
   	scanf("%d", &records[size].stock);
   	clear_buffer();
+    while(records[size].stock /1 == 0){
+      printf("\t\n*ERROR* \n\tYou have to write in number in stock.");    
+      printf("\n\tEnter the stock of the book again: ");
+      scanf("%d", &records[size].stock);
+      clear_buffer();
+    }
   	records[size].id = size + 1;
   	printf("\n\tSucceeded\n\n");
 }
@@ -144,10 +155,10 @@ void print_records(Record records[]){
 void print_all(Record records[]){
   	int size = 0;
 
-  	printf("\n%2s\t\t%18s\t\t\t\t%18s\t\t\t\t\t%6s%6s\n", "ID", "Title", "Author", "Price", "Stock");
+  	printf("\n%-8s%-32s%-16s%-8s%-8s\n", "ID", "Title", "Author", "Price", "Stock");
 
   	while (records[size].id != 0) {
-    		printf("%4d\t%-48s\t%-48s\t%6.2lf\t%3d\n", records[size].id, records[size].title, 
+    		printf("%-8d%-32s%-16s%-8.2lf%-8d\n", records[size].id, records[size].title, 
 			records[size].author, records[size].price, records[size].stock);
     		size++;
   	}
@@ -179,10 +190,10 @@ void print_specific(Record records[]){
     		fgets(title, 64, stdin);
     		title[strlen(title) - 1] = '\0';
 
-		printf("\n%2s\t\t%18s\t\t\t\t%18s\t\t\t\t\t%6s%6s\n", "ID", "Title", "Author", "Price", "Stock");		
+		printf("\n%-8s%-32s%-16s%-8s%-8s\n", "ID", "Title", "Author", "Price", "Stock");		
     		while (i < size) {
       			if (!strcmp(title, records[i].title))
-        			printf("%4d\t%-48s\t%-48s\t%6.2lf\t%3d\n", records[i].id, records[i].title, 
+        			printf("%-8d%-32s%-16s%-8.2lf%-8d\n", records[i].id, records[i].title, 
 					records[i].author, records[i].price, records[i].stock);	
       			i++;
     		}
@@ -192,10 +203,10 @@ void print_specific(Record records[]){
     		fgets(author, 64, stdin);
     		author[strlen(author) - 1] = '\0';
 
-		printf("\n%2s\t\t%18s\t\t\t\t%18s\t\t\t\t\t%6s%6s\n", "ID", "Title", "Author", "Price", "Stock");	
+		printf("\n%-8s%-32s%-16s%-8s%-8s\n", "ID", "Title", "Author", "Price", "Stock");	
     		while (i < size) {
       			if (!strcmp(author, records[i].author))
-				printf("%4d\t%-48s\t%-48s\t%6.2lf\t%3d\n", records[i].id, records[i].title, 
+				printf("%-8d%-32s%-16s%-8.2lf%-8d\n", records[i].id, records[i].title, 
 					records[i].author, records[i].price, records[i].stock);
 			i++;
     		}
